@@ -1,117 +1,123 @@
-﻿#include <iostream>    
-#include <vector>      
-#include <ctime>      
-#include <cstdlib>    
+﻿#include <iostream>
+#include <string>
 
-using namespace std;    
+class Person {
+protected:
+    std::string name;
+    int age;
 
-class Wheel {
+public:
+    // Конструктор за замовчуванням
+    Person() : name(""), age(0) {}
+
+    // Параметризований конструктор
+    Person(const std::string& name, int age) : name(name), age(age) {}
+
+    // Конструктор копіювання
+    Person(const Person& other) : name(other.name), age(other.age) {
+        std::cout << "Person copy constructor\n";
+    }
+
+    // Конструктор переміщення
+    Person(Person&& other) noexcept : name(std::move(other.name)), age(other.age) {
+        std::cout << "Person move constructor\n";
+    }
+
+    // Оператор копіювального присвоювання
+    Person& operator=(const Person& other) {
+        std::cout << "Person copy assignment\n";
+        if (this != &other) {
+            name = other.name;
+            age = other.age;
+        }
+        return *this;
+    }
+
+    // Оператор переміщення присвоювання
+    Person& operator=(Person&& other) noexcept {
+        std::cout << "Person move assignment\n";
+        if (this != &other) {
+            name = std::move(other.name);
+            age = other.age;
+        }
+        return *this;
+    }
+
+    // Віртуальний деструктор
+    virtual ~Person() {}
+
+    // Друзі: оператори вводу/виводу
+    friend std::ostream& operator<<(std::ostream& os, const Person& p) {
+        os << "Name: " << p.name << ", Age: " << p.age;
+        return os;
+    }
+
+    friend std::istream& operator>>(std::istream& is, Person& p) {
+        std::cout << "Enter name: ";
+        is >> p.name;
+        std::cout << "Enter age: ";
+        is >> p.age;
+        return is;
+    }
+};
+
+// Похідний клас - викладач
+class Teacher : public Person {
 private:
-    float radius;       // Приватне поле — радіус колеса
-public:
-    // Конструктор з параметром за замовчуванням (можна не передавати нічого)
-    Wheel(float r = 0) : radius(r) {}
+    std::string subject;
 
-    // Метод для вводу радіуса вручну або випадковим чином
-    void input(bool random) {
-        if (random) {
-            radius = 10 + rand() % 21; // Генерація випадкового числа від 10 до 30
-        }
-        else {
-            cout << "Введіть радіус колеса: ";
-            cin >> radius;             // Ввід з клавіатури
-        }
+public:
+    // Конструктор за замовчуванням
+    Teacher() : Person(), subject("") {}
+
+    // Параметризований конструктор
+    Teacher(const std::string& name, int age, const std::string& subject)
+        : Person(name, age), subject(subject) {
     }
 
-    // Метод для виводу радіуса
-    void display() const {
-        cout << "Радіус колеса: " << radius << " см\n";
+    // Конструктор копіювання
+    Teacher(const Teacher& other)
+        : Person(other), subject(other.subject) {
+        std::cout << "Teacher copy constructor\n";
+    }
+
+    // Конструктор переміщення
+    Teacher(Teacher&& other) noexcept
+        : Person(std::move(other)), subject(std::move(other.subject)) {
+        std::cout << "Teacher move constructor\n";
+    }
+
+    // Оператор копіювального присвоювання
+    Teacher& operator=(const Teacher& other) {
+        std::cout << "Teacher copy assignment\n";
+        if (this != &other) {
+            Person::operator=(other);
+            subject = other.subject;
+        }
+        return *this;
+    }
+
+    // Оператор переміщення присвоювання
+    Teacher& operator=(Teacher&& other) noexcept {
+        std::cout << "Teacher move assignment\n";
+        if (this != &other) {
+            Person::operator=(std::move(other));
+            subject = std::move(other.subject);
+        }
+        return *this;
+    }
+
+    // Друзі: оператори вводу/виводу
+    friend std::ostream& operator<<(std::ostream& os, const Teacher& t) {
+        os << static_cast<const Person&>(t);
+        os << ", Subject: " << t.subject;
+        return os;
+    }
+
+    friend std::istream& operator>>(std::istream& is, Teacher& t) {
+        is >> static_cast<Person&>(t);
+        std::cout << "Enter subject: ";
+        is >> t.subject;
+        return is;
     }
 };
-
-// Абстрактний клас Vehicle (Транспортний засіб)
-class Vehicle {
-public:
-    virtual void input(bool random) = 0;   // Ввід
-    virtual void display() const = 0;      // Вивід
-    virtual ~Vehicle() {}                  // Віртуальний деструктор (для правильного видалення)
-};
-
-// Клас Bicycle (успадковує Vehicle) — Велосипед має 2 колеса
-class Bicycle : public Vehicle {
-private:
-    vector<Wheel> wheels; // Композиція — велосипед містить 2 колеса (масив об'єктів Wheel)
-public:
-    // Конструктор, створюємо 2 колеса
-    Bicycle() : wheels(2) {}
-
-    // Реалізація методу введення
-    void input(bool random) override {
-        cout << "\n--- Велосипед ---\n";
-        for (int i = 0; i < 2; ++i) {
-            cout << "Колесо " << i + 1 << ":\n";
-            wheels[i].input(random); // Вводимо дані для кожного колеса
-        }
-    }
-
-    // Реалізація методу виведення
-    void display() const override {
-        cout << "Велосипед з 2 колесами:\n";
-        for (const auto& wheel : wheels) {
-            wheel.display(); // Виводимо кожне колесо
-        }
-    }
-};
-
-// Клас Car (успадковує Vehicle) — Автомобіль має 4 колеса
-class Car : public Vehicle {
-private:
-    vector<Wheel> wheels; // Композиція — автомобіль містить 4 колеса
-public:
-    // Конструктор, створюємо 4 колеса
-    Car() : wheels(4) {}
-
-    // Реалізація методу введення
-    void input(bool random) override {
-        cout << "\n--- Автомобіль ---\n";
-        for (int i = 0; i < 4; ++i) {
-            cout << "Колесо " << i + 1 << ":\n";
-            wheels[i].input(random); // Вводимо дані для кожного колеса
-        }
-    }
-
-    // Реалізація методу виведення
-    void display() const override {
-        cout << "Автомобіль з 4 колесами:\n";
-        for (const auto& wheel : wheels) {
-            wheel.display(); // Виводимо кожне колесо
-        }
-    }
-};
-
-// Головна функція
-int main() {
-	setlocale(LC_ALL, "ukr"); 
-    srand(time(0)); 
-
-    int choice;    
-    cout << "Оберіть тип введення даних:\n";
-    cout << "1 — Ввести вручну\n";
-    cout << "2 — Згенерувати випадково\n";
-    cout << "Ваш вибір: ";
-    cin >> choice;  
-
-    bool useRandom = (choice == 2); 
-
-    Bicycle bike;   // Створюємо об'єкт велосипеда
-    Car car;        // Створюємо об'єкт автомобіля
-
-    bike.input(useRandom);  // Вводимо дані для велосипеда
-    car.input(useRandom);   // Вводимо дані для автомобіля
-
-    cout << "\nРезультати:\n";
-    bike.display();         // Виводимо дані велосипеда
-    car.display();          // Виводимо дані автомобіля
-
-    return 0;               // Завершення програми
-}

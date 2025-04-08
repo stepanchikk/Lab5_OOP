@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task1\\",
+  "WorkspaceRootPath": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\OOP_Lab\\Lab5_OOP\\task1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0AD26D8F-7BFC-4BB3-A82B-A3BCE0BDFA58}|task1\\task1.vcxproj|C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task1\\task1\\task1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0AD26D8F-7BFC-4BB3-A82B-A3BCE0BDFA58}|task1\\task1.vcxproj|C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\OOP_Lab\\Lab5_OOP\\task1\\task1\\task1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0AD26D8F-7BFC-4BB3-A82B-A3BCE0BDFA58}|task1\\task1.vcxproj|solutionrelative:task1\\task1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "task1.cpp",
-              "DocumentMoniker": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task1\\task1\\task1.cpp",
+              "DocumentMoniker": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\OOP_Lab\\Lab5_OOP\\task1\\task1\\task1.cpp",
               "RelativeDocumentMoniker": "task1\\task1.cpp",
-              "ToolTip": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task1\\task1\\task1.cpp",
+              "ToolTip": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\OOP_Lab\\Lab5_OOP\\task1\\task1\\task1.cpp",
               "RelativeToolTip": "task1\\task1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAADAAQAAAMAtwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-04T08:40:49.064Z",
               "EditorCaption": ""

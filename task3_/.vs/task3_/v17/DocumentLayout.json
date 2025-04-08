@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task3_\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1B67E98-A794-415C-A250-E4A6F6A0CD9D}|task3_\\task3_.vcxproj|C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task3_\\task3_\\task3_.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1B67E98-A794-415C-A250-E4A6F6A0CD9D}|task3_\\task3_.vcxproj|solutionrelative:task3_\\task3_.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "task3_.cpp",
+              "DocumentMoniker": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task3_\\task3_\\task3_.cpp",
+              "RelativeDocumentMoniker": "task3_\\task3_.cpp",
+              "ToolTip": "C:\\Users\\stepa\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\task3_\\task3_\\task3_.cpp",
+              "RelativeToolTip": "task3_\\task3_.cpp",
+              "ViewState": "AgIAAAEAAAAArpmZmVkqwAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-08T05:48:53.617Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
